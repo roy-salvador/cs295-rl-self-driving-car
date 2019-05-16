@@ -3,8 +3,9 @@
 Implementation of Open AI Gym environment(s) using Microsoft AirSim Simulator for training self-driving cars using Deep Reinforcement Learning. 
 A Mini Project requirement for CS 295 course at University of the Philippines Diliman AY 2018-2019 under Sir Prospero Naval.
 
+<p align="center">
 ![alt text](https://github.com/roy-salvador/cs295-rl-self-driving-car/raw/master/images/airsimenv.png "AirSim Gym Environment")
-
+</p>
 
 ## Requirements
 * [Microsoft AirSim Simulator](https://github.com/microsoft/AirSim)
