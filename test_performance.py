@@ -47,7 +47,7 @@ EXPERIMENTS = [
     #{'title' : 'A2C_PartialAction_Mlp_Rew1', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpRew1Env, 'model' : 'a2c_mlpPolicy_partialEnv_reward1_99'},
     #{'title' : 'PPO2_SimplifiedAction_Mlp', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlp_simplified_99'},
     #{'title' : 'PPO2_SimplifiedAction_MlpLstm', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlplstm_simplified_99'},
-    {'title' : 'PPO2_SimplifiedAction_MetaRL', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionMetaRLEnv, 'model' : 'ppo_metarl_simplified_299'},
+    {'title' : 'PPO2_SimplifiedAction_MetaRL', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionMetaRLEnv, 'model' : 'ppo_metarl_simplified_99'},
 ]
 TEST_EPISODES = 100
 
