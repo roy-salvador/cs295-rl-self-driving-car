@@ -1,10 +1,9 @@
 '''
-    Outputs the statistics (collision, distance covered, total reward per episode) to a file for each experiments performed:
-        Algorithm`  Environment                 Policy Network
-        A2C         Full Action Environment     MLP LSTM
+    Outputs the statistics (collision, distance covered, total reward per episode) to a file for each experiments performed.
+    See EXPERIMENTS variable below 
 '''
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize
-from stable_baselines import PPO2, A2C
+from stable_baselines import PPO2, A2C, SAC
 import gym
 import airsim
 import math
@@ -19,6 +18,7 @@ import envs.AirSimPartialActionMlpEnv
 import envs.AirSimPartialActionMlpRew1Env
 import envs.AirSimSimplifiedActionEnv
 import envs.AirSimSimplifiedActionMetaRLEnv
+import envs.AirSimSimplifiedActionLnMlpEnv
 
 # Environment Settings for the test
 MAX_LIDAR_RANGE = 10 
@@ -39,15 +39,16 @@ MAX_GOAL_DISTANCE = 100
 
 MODEL_DIR = 'models'
 EXPERIMENTS = [
-    #{'title' : 'A2C_FullAction_MlpLSTM', 'algo': A2C, 'env' : envs.AirSimFullActionMlpLSTMEnv, 'model' : 'a2c_mlpLSTM_fullEnv_rew1_99'},
-    #{'title' : 'A2C_PartialAction_MlpLSTM', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpLSTMEnv, 'model' : 'a2c_mlpLSTM_partialEnv_rew1_99'},
-    #{'title' : 'A2C_FullAction_Mlp', 'algo': A2C, 'env' : envs.AirSimFullActionMlpEnv, 'model' : 'a2c_mlpPolicy_fullEnv_99'},
-    #{'title' : 'A2C_FullAction_Mlp_Rew1', 'algo': A2C, 'env' : envs.AirSimFullActionMlpRew1Env, 'model' : 'a2c_mlpPolicy_fullEnv_reward1_99'},
-    #{'title' : 'A2C_PartialAction_Mlp', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpEnv, 'model' : 'a2c_mlpPolicy_partialEnv_99'},
-    #{'title' : 'A2C_PartialAction_Mlp_Rew1', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpRew1Env, 'model' : 'a2c_mlpPolicy_partialEnv_reward1_99'},
-    #{'title' : 'PPO2_SimplifiedAction_Mlp', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlp_simplified_99'},
-    #{'title' : 'PPO2_SimplifiedAction_MlpLstm', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlplstm_simplified_99'},
+    {'title' : 'A2C_FullAction_MlpLSTM', 'algo': A2C, 'env' : envs.AirSimFullActionMlpLSTMEnv, 'model' : 'a2c_mlpLSTM_fullEnv_rew1_99'},
+    {'title' : 'A2C_PartialAction_MlpLSTM', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpLSTMEnv, 'model' : 'a2c_mlpLSTM_partialEnv_rew1_99'},
+    {'title' : 'A2C_FullAction_Mlp', 'algo': A2C, 'env' : envs.AirSimFullActionMlpEnv, 'model' : 'a2c_mlpPolicy_fullEnv_99'},
+    {'title' : 'A2C_FullAction_Mlp_Rew1', 'algo': A2C, 'env' : envs.AirSimFullActionMlpRew1Env, 'model' : 'a2c_mlpPolicy_fullEnv_reward1_99'},
+    {'title' : 'A2C_PartialAction_Mlp', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpEnv, 'model' : 'a2c_mlpPolicy_partialEnv_99'},
+    {'title' : 'A2C_PartialAction_Mlp_Rew1', 'algo': A2C, 'env' : envs.AirSimPartialActionMlpRew1Env, 'model' : 'a2c_mlpPolicy_partialEnv_reward1_99'},
+    {'title' : 'PPO2_SimplifiedAction_Mlp', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlp_simplified_99'},
+    {'title' : 'PPO2_SimplifiedAction_MlpLstm', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionEnv, 'model' : 'ppo_mlplstm_simplified_99'},
     {'title' : 'PPO2_SimplifiedAction_MetaRL', 'algo': PPO2, 'env' : envs.AirSimSimplifiedActionMetaRLEnv, 'model' : 'ppo_metarl_simplified_99'},
+    {'title' : 'SAC_SimplifiedAction_LnMlp', 'algo': SAC, 'env' : envs.AirSimSimplifiedActionLnMlpEnv, 'model' : 'sac_lnmlp_target_normal_52'},
 ]
 TEST_EPISODES = 100
 
