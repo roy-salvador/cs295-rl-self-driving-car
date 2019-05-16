@@ -1,7 +1,5 @@
 '''
-    Outputs the statistics (collision, distance covered, total reward per episode) to a file for each experiments performed:
-        Algorithm`  Environment                 Policy Network
-        A2C         Full Action Environment     MLP LSTM
+    Outputs the statistics (collision, distance covered, total reward per episode) to a file for each experiments performed
 '''
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize
 from stable_baselines import PPO2, A2C
