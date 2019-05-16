@@ -54,6 +54,11 @@ A Mini Project requirement for CS 295 course at University of the Philippines Di
 }
 ``` 
 3. Run the AirSim simulator.
+
+<p align="center">
+  <img width="1000" height="300" src="https://github.com/roy-salvador/cs295-rl-self-driving-car/raw/master/images/airsim.png">
+</p>
+
 4. Register by indicating your chosen IP Address and create the environment. You can set options such the number of way points to reach and their position.
 ```
 # delete gym environment from registry
