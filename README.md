@@ -81,5 +81,5 @@ gym.register(
 env = gym.make(env_name)
 env = DummyVecEnv([lambda: env])
 ```
-5. Train the model using [Stable Baselines](https://github.com/hill-a/stable-baselines), For the project, we tried [A2C](https://stable-baselines.readthedocs.io/en/master/modules/a2c.html) and [PPO2](https://stable-baselines.readthedocs.io/en/master/modules/ppo2.html).
+5. Train the model using [Stable Baselines](https://github.com/hill-a/stable-baselines), For the project, we tried [A2C](https://stable-baselines.readthedocs.io/en/master/modules/a2c.html), [PPO2](https://stable-baselines.readthedocs.io/en/master/modules/ppo2.html) adn [SAC](https://stable-baselines.readthedocs.io/en/master/modules/sac.html). Also check inside  `train` for sample training scripts.  
 6. For loading and running the trained RL models / agents, check `test_performance.py` as an example.
