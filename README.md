@@ -39,7 +39,7 @@ A Mini Project requirement for CS 295 course at University of the Philippines Di
                     "Enabled" : true,
                     "Range" : 10,
                     "RotationsPerSecond": 10,
-					"PointsPerSecond": 100000,
+		    "PointsPerSecond": 100000,
                     "DrawDebugPoints": true
                 }
           }
